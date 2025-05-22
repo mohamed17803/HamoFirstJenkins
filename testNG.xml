@@ -1,0 +1,59 @@
+    <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+    <suite name="Regression Suite">
+
+        <!-- Define browser parameter -->
+        <parameter name="browser" value="chrome" />
+
+        <!-- Allure listener for generating reports -->
+        <listeners>
+            <listener class-name="io.qameta.allure.testng.AllureTestNg" />
+        </listeners>
+
+        <!-- Test definition -->
+        <test name="Regression Test in Chrome">
+            <classes>
+                <!-- Register Test -->
+                <class name="testsPackage.RegisterTest">
+                    <methods>
+                        <include name="RegisterFeatureTest" />
+                    </methods>
+                </class>
+
+                <!-- Login Test -->
+                <class name="testsPackage.LoginTest">
+                    <methods>
+                        <include name="LoginFeatureTest" />
+                    </methods>
+                </class>
+
+                <!-- Add to Cart Test -->
+                <class name="testsPackage.AddtoCartTest">
+                    <methods>
+                        <include name="AddingProductFeature" />
+                    </methods>
+                </class>
+
+                <!-- Add to Wishlist Test -->
+                <class name="testsPackage.AddtoWishlistTest">
+                    <methods>
+                        <include name="AddToWishlistFeature" />
+                    </methods>
+                </class>
+
+                <!-- Search Feature Test -->
+                <class name="testsPackage.SearchFeatureTest">
+                    <methods>
+                        <include name="SearchingFeature" />
+                    </methods>
+                </class>
+
+                <!-- Contact Us Test -->
+                <class name="testsPackage.ContactUsTest">
+                    <methods>
+                        <include name="ContactUsCheck" />
+                    </methods>
+                </class>
+            </classes>
+        </test>
+
+    </suite>
